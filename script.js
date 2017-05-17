@@ -1,6 +1,18 @@
 $(document).ready(function () {
-    //getQuote();
-    //$("#newQuote").on("click", getQuote);
-    //$("#newTweet").on("click", tweetQuote);
-    //document.getElementById("quote-text").style.color = "blue";
+    $("#find-me").on("click", getLocation);
 });
+
+var x = document.getElementById("text");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude +
+        "<br>Longitude: " + position.coords.longitude;
+}
