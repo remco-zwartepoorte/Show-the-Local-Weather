@@ -2,6 +2,44 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-#locationText {
-    margin-top: 200px;
+.container {
+  max-width: 980px;
+  text-align: center;
+  margin: 200px auto;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+#geocoding_form {
+  margin: 40px auto 40px;
+}
+
+.input-group {
+  margin-left: 4%;
+}
+
+.find-me.btn:focus {
+  border-color: transparent;
+  outline: 0;
+}
+
+#coordinates {
+  font-size: 18px;
+  opacity: 1;
+  margin-bottom: 60px;
+}
+
+#coordinates b:first-child {
+  margin-right: 15px;
+}
+
+#temp {
+  font-size: 48px;
+  margin-bottom: 40px;
+}
+
+#currentWeather {
+  font-size: 24px;
 }
