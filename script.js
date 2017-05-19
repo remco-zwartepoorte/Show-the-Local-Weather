@@ -36,7 +36,7 @@ $(document).ready(function () {
   /*--------------------------------------------------------------
   # Define global variables
   --------------------------------------------------------------*/
-  var weatherData, temp, wind;
+  var weatherData, temp, wind, icon;
   var lat = 42;
   var lng = 41;
   var baseURL = "https://api.darksky.net/forecast/c0e823d8c84f968c97291b5c57af2288/";
@@ -89,11 +89,16 @@ $(document).ready(function () {
     $("#location").html(weatherData.timezone);
     $("#temp").html(weatherData.currently.temperature + "&deg;F");
     $("#currentWeather").html(weatherData.currently.summary);
-    //create an animated weather icon
-      var wIcon = new Skycons({"color":"white"});
-      wIcon.add("weatherIcon", weatherData.currently.icon);
-      wIcon.play();
 
+    var icon = weatherData.currently.icon;
+	  // Add Sky Icon
+		var skycons = new Skycons({"color": "black"});
+
+		// Add canvas by ID
+		skycons.add("weather-icon", icon);
+
+		// Start animation!
+		skycons.play();
 
 
 }
