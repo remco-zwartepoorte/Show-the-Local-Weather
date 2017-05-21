@@ -21,7 +21,7 @@ $(document).ready(function () {
       // Get the coordinates of the current possition.
       lat = position.coords.latitude;
       lng = position.coords.longitude;
-      showCurrentPosition();
+      //showCurrentPosition();
       getWeather();
     })
   }
@@ -42,7 +42,7 @@ $(document).ready(function () {
       url: baseURL + lat + "," + lng,
       dataType: "json",
       success: function (data) {
-        console.log(data);
+        //console.log(data);
         weatherData = data;
         showWeather();
       }
