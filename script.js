@@ -1,21 +1,18 @@
+//document.addEventListener('DOMContentLoaded', function () {
+// getQuote();
+//  newQuote.addEventListener('click', getQuote);
+//  newTweet.addEventListener('click', tweetQuote);
+//});
+
 $(document).ready(function () {
-  /*--------------------------------------------------------------
-  # Define global variables
-  --------------------------------------------------------------*/
   var weatherData, temp, wind, icon;
   var lat = 42;
   var lng = 41;
   var measurement = "imperial";
   var baseURL = "https://api.darksky.net/forecast/c0e823d8c84f968c97291b5c57af2288/";
 
-  /*--------------------------------------------------------------
-  # Init
-  --------------------------------------------------------------*/
   getLocation();
 
-  /*--------------------------------------------------------------
-  # getLocation()
-  --------------------------------------------------------------*/
   function getLocation() {
     navigator.geolocation.getCurrentPosition(function (position) {
       // Get the coordinates of the current possition.
@@ -26,17 +23,11 @@ $(document).ready(function () {
     })
   }
 
-  /*--------------------------------------------------------------
-    # showCurrentPosition()
-    --------------------------------------------------------------*/
   function showCurrentPosition() {
     $("#latitude").html(lat.toFixed(3));
     $("#longitude").html(lng.toFixed(3));
   }
 
-  /*--------------------------------------------------------------
-  # getWeather()
-  --------------------------------------------------------------*/
   function getWeather() {
     $.ajax({
       url: baseURL + lat + "," + lng,
@@ -49,9 +40,6 @@ $(document).ready(function () {
     });
   }
 
-  /*--------------------------------------------------------------
-  # showWeather()
-  --------------------------------------------------------------*/
   function showWeather() {
     $("#location").html(weatherData.timezone);
     temp = weatherData.currently.temperature
@@ -68,9 +56,6 @@ $(document).ready(function () {
     skycons.play();
   }
 
-  /*--------------------------------------------------------------
-  # switchDegrees()
-  --------------------------------------------------------------*/
   function convert() {
     if (measurement === "imperial") { // If 'murica measurements
       measurement = "metric"; // Change to metric
@@ -90,9 +75,7 @@ $(document).ready(function () {
       });
     }
   }
-  /*--------------------------------------------------------------
-  ## Convert button click handler | When you click the "Show in °X" button
-  --------------------------------------------------------------*/
+
   $("#switch").click(function () {
     convert();
   });
