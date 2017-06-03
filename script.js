@@ -36,13 +36,11 @@ function getWeather() {
         console.log('Looks like there was a problem. Status Code: ' + response.status);
         return;
       }
-      // Examine the text in the response
       response.json().then(function (data) {
         weatherData = data;
         console.log(data);
         showWeather();
         document.getElementById("switchtemp").style.display = "inline";
-
       });
     }
     )
@@ -55,7 +53,7 @@ function getWeather() {
 function showWeather() {
   document.getElementById("location").innerHTML = weatherData.timezone;
   temp = weatherData.currently.temperature
-  document.getElementById("temp").innerHTML = weatherData.currently.temperature; //+ "&deg;F";
+  document.getElementById("temp").innerHTML = Math.round(temp) + "&deg;F";
   document.getElementById("currentWeather").innerHTML = weatherData.currently.summary;
   var icon = weatherData.currently.icon;
   var skycons = new Skycons({
