@@ -30,8 +30,8 @@ function getWeather() {
   fetch(fetchURL, {
     cache: "reload"
   })
-    .then(
-    function (response) {
+    .then(function (response) {
+      console.log(response);
       if (response.status !== 200) {
         console.log('Looks like there was a problem. Status Code: ' + response.status);
         return;
@@ -42,8 +42,7 @@ function getWeather() {
         showWeather();
         document.getElementById("switchtemp").style.display = "inline";
       });
-    }
-    )
+    })
     .catch(function (err) {
       console.log('Fetch Error :-S', err);
     });
