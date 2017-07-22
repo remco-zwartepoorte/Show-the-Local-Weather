@@ -64,6 +64,7 @@ function showWeather() {
   });
   skycons.add("weather-icon", icon);
   skycons.play();
+  convertTemp();
 }
 
 function convertTemp() {
