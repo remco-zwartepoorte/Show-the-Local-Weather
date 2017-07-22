@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.getElementById("switchtemp").addEventListener('click', convertTemp);
-document.getElementById("loadweather").addEventListener('click', loadWeather);
+// document.getElementById("loadweather").addEventListener('click', loadWeather);
 
 var weatherData, temp, wind, icon, fetchURL, skycons;
 var lat = 42;
@@ -12,16 +12,17 @@ var measurement = "imperial";
 var baseURL = "https://api.darksky.net/forecast/c0e823d8c84f968c97291b5c57af2288/";
 
 
-function loadWeather() {
-  getWeather();
-  document.getElementById("loadweather").style.display = "none";
-  document.getElementById("status").style.display = "block";
-};
+// function loadWeather() {
+//   getWeather();
+//   document.getElementById("loadweather").style.display = "none";
+//   document.getElementById("status").style.display = "block";
+// };
 
 function getLocation() {
   navigator.geolocation.getCurrentPosition(function (position) {
     lat = position.coords.latitude;
     lng = position.coords.longitude;
+    getWeather()
   })
 }
 
@@ -41,7 +42,7 @@ function getWeather() {
         weatherData = data;
         console.log(data);
         showWeather();
-        document.getElementById("switchtemp").style.display = "inline";
+        // document.getElementById("switchtemp").style.display = "inline";
 
       });
     }

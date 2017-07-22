@@ -12,36 +12,17 @@ h1 {
   margin-bottom: 20px;
 }
 
-#geocoding_form {
-  margin: 40px auto 40px;
-}
-
-.input-group {
-  margin-left: 4%;
-}
-
-.find-me.btn:focus {
-  border-color: transparent;
-  outline: 0;
-}
-
-#coordinates {
-  font-size: 18px;
-  opacity: 1;
-  margin-bottom: 60px;
-}
-
-#coordinates b:first-child {
-  margin-right: 15px;
+#location {
+  font-size: 24px;
 }
 
 #temp {
-  font-size: 58px;
+  font-size: 34px;
   margin-bottom: 20px;
 }
 
 #currentWeather {
-  font-size: 36px;
+  font-size: 24px;
   margin-bottom: 0px;
 }
 
