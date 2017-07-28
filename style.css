@@ -1,28 +1,41 @@
+html {
+  font-size: 100%
+}
+
 body {
+  margin: 40px;
   font-family: 'Open Sans', sans-serif;
 }
 
-.container {
-  max-width: 980px;
-  text-align: center;
-  margin: 200px auto;
+.wrapper {
+  width: 500px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+  background-color: #fff;
+  color: #444;
 }
 
-h1 {
-  margin-bottom: 20px;
+.box {
+  background-color: #444;
+  color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 150%;
 }
 
-#location {
-  font-size: 24px;
+.timezone {
+
 }
 
-#temp {
-  font-size: 34px;
-  margin-bottom: 20px;
+.temperature {
+
 }
 
-#currentWeather {
-  font-size: 24px;
-  margin-bottom: 0px;
+.weather-icon {
+
 }
 
+.switchtemp {
+
+}

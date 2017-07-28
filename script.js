@@ -42,8 +42,6 @@ function getWeather() {
         weatherData = data;
         console.log(data);
         showWeather();
-        // document.getElementById("switchtemp").style.display = "inline";
-
       });
     }
     )
@@ -54,13 +52,12 @@ function getWeather() {
 }
 
 function showWeather() {
-  document.getElementById("location").innerHTML = weatherData.timezone;
-  temp = weatherData.currently.temperature
-  document.getElementById("temp").innerHTML = weatherData.currently.temperature; //+ "&deg;F";
-  document.getElementById("currentWeather").innerHTML = weatherData.currently.summary;
+  document.getElementsByClassName("timezone")[0].innerHTML = weatherData.timezone;
+  document.getElementsByClassName("temperature")[0].innerHTML = weatherData.currently.temperature; //+ "&deg;F";
+  document.getElementsByClassName("summary")[0].innerHTML = weatherData.currently.summary;
   var icon = weatherData.currently.icon;
   var skycons = new Skycons({
-    "color": "black"
+    "color": "white"
   });
   skycons.add("weather-icon", icon);
   skycons.play();
@@ -68,16 +65,17 @@ function showWeather() {
 }
 
 function convertTemp() {
+  temp = weatherData.currently.temperature
   if (measurement === "imperial") {
     measurement = "metric";
     temp = (temp - 32) * (5 / 9);
     document.getElementById("switchtemp").innerHTML = "Show in &degF";
-    document.getElementById("temp").innerHTML = Math.round(temp) + "&deg;C";
+    document.getElementsByClassName("temperature")[0].innerHTML = Math.round(temp) + "&deg;C";
   }
   else {
     measurement = "imperial";
     temp = temp * 9 / 5 + 32;
     document.getElementById("switchtemp").innerHTML = "Show in &degC";
-    document.getElementById("temp").innerHTML = Math.round(temp) + "&deg;F";
+    document.getElementsByClassName("temperature")[0].innerHTML = Math.round(temp) + "&deg;F";
   }
 }
