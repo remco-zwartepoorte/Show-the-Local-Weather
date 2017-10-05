@@ -1,0 +1,32 @@
+{
+  "name": "show-the-local-weather",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack-dev-server --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rrzwarte/Show-the-Local-Weather.git"
+  },
+  "author": "Remco Zwartepoorte",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rrzwarte/Show-the-Local-Weather/issues"
+  },
+  "homepage": "https://github.com/rrzwarte/Show-the-Local-Weather#readme",
+  "dependencies": {
+    "skycons": "^1.0.0"
+  },
+  "devDependencies": {
+    "css-loader": "^0.28.4",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "html-webpack-plugin": "^2.30.1",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.4.1",
+    "webpack-dev-server": "^2.6.1"
+  },
+  "keywords": [],
+  "description": ""
+}
